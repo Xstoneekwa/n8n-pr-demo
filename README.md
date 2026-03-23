@@ -1,1 +1,6 @@
-# n8n-pr-demo
+@app.get("/auto-test")
+def auto_test():
+    return {"status": "auto trigger working"}
+    @app.get("/auto-test/v1")
+def auto_test_v1():
+    return {"status": "auto trigger working"}
