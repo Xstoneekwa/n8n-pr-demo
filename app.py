@@ -1,11 +1,6 @@
-from fastapi import FastAPI
+app.get('/admin', (req, res) => {
+    const password = "123";
+    const api_key = "abc";
 
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Hello World"}
-
-@app.get("/users")
-def get_users():
-    return {"users": ["Alice", "Bob"]}
+    res.send({ password, api_key });
+});
