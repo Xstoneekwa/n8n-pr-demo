@@ -19,3 +19,6 @@ def messages():
 @app.get("/messages/v1")
 def messages_v1():
     return {"message": "ok"}
+@app.get("/health")
+def health():
+    return {"status": "ok"}
