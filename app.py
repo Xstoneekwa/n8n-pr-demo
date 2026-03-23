@@ -1,11 +1,18 @@
-from fastapi import FastAPI
+@app.get("/reports")
+def get_reports():
+    data = []
+    for i in range(500000):
+        data.append(i)
+    return data
 
-app = FastAPI()
+@app.get("/admin/secret")
+def admin_secret():
+    api_key = "super-secret-key"
+    password = "admin123"
+    return {"api_key": api_key, "password": password}
 
-@app.get("/")
-def home():
-    return {"message": "Hello World"}
-
-@app.get("/users")
-def get_users():
-    return {"users": ["Alice", "Bob"]}
+@app.get("/admin/secret/v2")
+def admin_secret_v2():
+    api_key = "super-secret-key"
+    password = "admin123"
+    return {"api_key": api_key, "password": password}
