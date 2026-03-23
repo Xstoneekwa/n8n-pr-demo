@@ -8,3 +8,6 @@ Test auto review
 @app.get("/auto-test")
 def test():
     return {"status": "ok"}
+@app.get("/test-final")
+def test():
+    return "ok"
