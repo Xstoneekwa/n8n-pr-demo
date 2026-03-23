@@ -9,3 +9,6 @@ def home():
 @app.get("/users")
 def get_users():
     return {"users": ["Alice", "Bob"]}
+@app.get("/test-trigger")
+def test_trigger():
+    return {"status": "trigger test"}
