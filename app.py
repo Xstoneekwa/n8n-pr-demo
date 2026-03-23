@@ -1,11 +1,22 @@
-from fastapi import FastAPI
+app.get('/users', (req, res) => {
+    try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = 10;
 
-app = FastAPI()
+        if (page < 1) {
+            return res.status(400).json({ error: "Invalid page" });
+        }
 
-@app.get("/")
-def home():
-    return {"message": "Hello World"}
+        const users = getUsersPaginated(page, limit);
 
-@app.get("/users")
-def get_users():
-    return {"users": ["Alice", "Bob"]}
+        res.status(200).json({
+            success: true,
+            data: users
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            error: "Internal server error"
+        });
+    }
+});
