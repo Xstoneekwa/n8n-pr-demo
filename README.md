@@ -11,3 +11,6 @@ def test():
 @app.get("/test-final")
 def test():
     return "ok"
+@app.get("/test-final")
+def test():
+    return "ok"
