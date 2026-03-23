@@ -1,11 +1,5 @@
-from fastapi import FastAPI
+app.get('/users', (req, res) => {
+    const users = getUsers();
 
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Hello World"}
-
-@app.get("/users")
-def get_users():
-    return {"users": ["Alice", "Bob"]}
+    res.send(users);
+});
